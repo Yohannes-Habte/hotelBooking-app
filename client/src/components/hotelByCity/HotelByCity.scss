@@ -1,0 +1,80 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile
+.country-hotels {
+  position: relative;
+  .hotel-container {
+    .image-container {
+      .hotel-image {
+      }
+    }
+
+    .hotel-title-props {
+      position: absolute;
+      .hotel-title {
+      }
+      .hotel-props {
+      }
+    }
+  }
+}
+
+// Table
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .country-hotels {
+    position: relative;
+    .hotel-container {
+      .image-container {
+        .hotel-image {
+        }
+      }
+
+      .hotel-title-props {
+        position: absolute;
+        .hotel-title {
+        }
+        .hotel-props {
+        }
+      }
+    }
+  }
+}
+
+// Labtop
+
+@media screen and (min-width: 1024px) {
+  .country-hotels {
+    position: relative;
+    width: 100%;
+    max-width: $laptop;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .hotel-container {
+        
+      .image-container {
+        flex: 1;
+        .hotel-image {
+          width: 100%;
+          object-fit: cover;
+          border-radius: $radius;
+       
+        }
+      }
+
+      .hotel-title-props {
+        position: absolute;
+        bottom: 1rem;
+        color: #f9d401;
+        padding-left: 1rem;
+        
+        .hotel-title {
+        }
+        .hotel-props {
+        }
+      }
+    }
+  }
+}

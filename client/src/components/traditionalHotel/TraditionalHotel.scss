@@ -1,0 +1,75 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile
+.traditional-hotels {
+  .hotel-container {
+    .image-container {
+      .image {
+      }
+    }
+
+    .title-props {
+      .title {
+      }
+
+      .price {
+      }
+    }
+  }
+}
+
+// Table
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .traditional-hotels {
+    .hotel-container {
+      .image-container {
+        .image {
+        }
+      }
+
+      .title-props {
+        .title {
+        }
+
+        .price {
+        }
+      }
+    }
+  }
+}
+
+// Labtop
+
+@media screen and (min-width: 1024px) {
+  .traditional-hotels {
+    width: 100%;
+    max-width: $laptop;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .hotel-container {
+       
+      .image-container {
+       
+        
+        
+        .image {
+          height: 10rem;
+          width: 15rem;
+          object-fit: cover;
+          border-radius: $radius;
+        }
+      }
+
+      .hotel-title-price {
+        .title {
+        }
+
+        .price {
+        }
+      }
+    }
+  }
+}

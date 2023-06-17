@@ -1,0 +1,70 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile
+.rooms-page {
+  .rooms-page-container {
+    .title {
+    }
+
+    .rooms-container {
+      .image-container {
+        .image {
+        }
+      }
+    }
+  }
+}
+
+// Table
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .rooms-page {
+    .rooms-page-container {
+      .title {
+      }
+
+      .rooms-container {
+        .image-container {
+          .image {
+          }
+        }
+      }
+    }
+  }
+}
+
+// Labtop
+@media screen and (min-width: 1024px) {
+  .rooms-page {
+    width: 100%;
+    max-width: $laptop;
+    margin: 1rem auto;
+
+    .rooms-page-container {
+      width: 100%;
+      max-width: $laptop;
+      margin: 1rem auto;
+
+      .title {
+        @include title;
+      }
+
+      .rooms-container {
+        width: $laptop;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1.2rem;
+        row-gap: 1rem;
+
+        .image-container {
+          .image {
+            width: 100%;
+            height: 15rem;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

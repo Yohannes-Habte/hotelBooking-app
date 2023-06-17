@@ -1,0 +1,157 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile styling
+.navbar {
+  width: 100%;
+  background-color: $navbar-bg;
+
+  .navbar-container {
+    width: 100%;
+    max-width: $mobile;
+    margin: auto;
+
+    .title {
+      .title-link {
+        @include title;
+      }
+    }
+
+    .items {
+      display: flex;
+      justify-content: space-around;
+
+      .link {
+        color: $header-color;
+      }
+    }
+
+    .signup-login {
+      display: none;
+    }
+  }
+}
+
+// Tablet styling
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navbar {
+    width: 100%;
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3rem 2rem;
+
+      .title {
+        display: flex;
+        align-items: center;
+
+        .title-link {
+          @include title2;
+        }
+      }
+
+      .items {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .item {
+          .link {
+            color: $header-color;
+          }
+        }
+      }
+
+      .signup-login {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .account-item {
+          .link {
+            color: $header-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Laptop styling
+@media screen and (min-width: 1024px) {
+  .navbar {
+    width: 100%;
+
+    .navbar-container {
+      width: 100%;
+      max-width: $laptop;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+
+      .title {
+        display: flex;
+        align-items: center;
+
+        .title-link {
+          @include title2;
+        }
+      }
+
+      .items {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .item {
+          .link {
+            color: $header-color;
+          }
+        }
+      }
+
+      .user-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .userName {
+          color: #ffffff;
+        }
+
+        .user-icon {
+          color: #ffffff;
+          font-size: $afs;
+          cursor: pointer;
+          &:hover {
+            color: #ffc0cb;
+          }
+        }
+      }
+
+      .signup-login {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .account-item {
+          background-color: rgb(2, 2, 255);
+          padding: $padding-button;
+          border-radius: $radius;
+
+          &:hover {
+            background-color: $hover-button;
+          }
+
+          .link {
+            color: $header-color;
+
+            &:hover {
+              color: $hover-text;
+            }
+          }
+        }
+      }
+    }
+  }
+}

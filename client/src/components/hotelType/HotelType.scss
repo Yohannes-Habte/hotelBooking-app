@@ -1,0 +1,72 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile
+.hotel-type {
+  .type-container {
+    .image-container {
+      .image {
+      }
+    }
+
+    .title-props {
+      .title {
+      }
+
+      .props {
+      }
+    }
+  }
+}
+
+// Table
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hotel-type {
+    .type-container {
+      .image-container {
+        .image {
+        }
+      }
+
+      .title-props {
+        .title {
+        }
+
+        .props {
+        }
+      }
+    }
+  }
+}
+
+// Labtop
+
+@media screen and (min-width: 1024px) {
+  .hotel-type {
+    width: 100%;
+    max-width: $laptop;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .type-container {
+       
+
+      .image-container {
+        .image {
+            width: 100%;
+            object-fit: cover;
+            border-radius: $radius;
+        }
+      }
+
+      .title-props {
+        .title {
+        }
+
+        .props {
+        }
+      }
+    }
+  }
+}
