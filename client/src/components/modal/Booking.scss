@@ -4,11 +4,11 @@
 // Mobile
 
 .modal-booking {
-  .modal-title {
-  }
-
   .modal-container {
     .modal-icon {
+    }
+
+    .modal-title {
     }
 
     .select-room {
@@ -44,11 +44,11 @@
 // Tablet
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .modal-booking {
-    .modal-title {
-    }
-
     .modal-container {
       .modal-icon {
+      }
+
+      .modal-title {
       }
 
       .select-room {
@@ -84,23 +84,14 @@
 
 // Laptop
 @media screen and (min-width: 1024px) {
-  
   .modal-booking {
     width: 100%;
     height: 100vh;
     position: fixed;
-    top: 0;
+    top: 2rem;
     left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: white;
     overflow-y: scroll;
-    
-
-    .modal-title {
-      @include title;
-    }
 
     .modal-container {
       max-width: $max-width;
@@ -114,6 +105,10 @@
         top: 0.5rem;
         right: 0.5rem;
         cursor: pointer;
+      }
+
+      .modal-title {
+        @include title;
       }
 
       .select-room {
@@ -143,7 +138,7 @@
           .room-container {
             display: flex;
             flex-direction: column;
-            
+
             .label {
             }
             .input-field {

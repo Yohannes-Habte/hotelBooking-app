@@ -16,6 +16,11 @@ export const getFooter = async (req, res, next) => {
 }
 
 // Get About page data
+export const getHotels = async (req, res, next) => {
+    res.status(200).send(data.hotels)
+}
+
+// Get About page data
 export const getAbout = async (req, res, next) => {
     res.status(200).send(data.AboutData)
 }

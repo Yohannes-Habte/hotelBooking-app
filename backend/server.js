@@ -11,8 +11,11 @@ import multer from 'multer';
 import userRouter from './routes/userRoutes.js';
 import hotelRouter from './routes/hotelRoutes.js';
 import roomRouter from './routes/roomRoutes.js';
-import pagesRouter from './routes/pages.js';
+import paymentRouter from './routes/paymentRoute.js';
+import pagesRouter from './routes/pageRoutes.js';
+import commentRouter from './routes/commentRoutes.js';
 import globalErrorHandler from './middlewares/globalErrorHandler.js';
+
 
 // Express App
 const app = express();
@@ -36,7 +39,9 @@ const connectToDB = async () => {
 app.use('/api/users', userRouter);
 app.use('/api/hotels', hotelRouter);
 app.use('/api/rooms', roomRouter);
+app.use('/api/payment', paymentRouter);
 app.use('/api/pages', pagesRouter);
+app.use('/api/comments', commentRouter);
 
 // Static assets
 app.use(express.static('assets'));

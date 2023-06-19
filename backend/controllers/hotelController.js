@@ -45,9 +45,7 @@ export const getOneHotel = async (req, res, next) => {
 };
 
 // Get all rooms photos
-export const getPhotos = async (req, res, next) => {
- 
-};
+export const getPhotos = async (req, res, next) => {};
 
 //! Get all hotels using query and limit
 export const getAllHotels = async (req, res, next) => {
@@ -161,12 +159,36 @@ export const countByType = async (req, res, next) => {
     const villaCount = await Hotel.countDocuments({ type: 'Villa' });
 
     return res.status(200).json([
-      { type: 'Hotel', count: hotelCount, image: '' },
-      { type: 'Apartment', count: apartmentCount, image: '' },
-      { type: 'Resort', count: resortCount, image: '' },
-      { type: 'Villa', count: villaCount, image: '' },
-      { type: 'Cabin', count: cabinCount, image: '' },
-      { type: 'Hostel', count: hostelCount, image: '' },
+      {
+        type: 'Hotel',
+        count: hotelCount,
+        image: 'http://localhost:9900/4starHotel.jpg',
+      },
+      {
+        type: 'Apartment',
+        count: apartmentCount,
+        image: 'http://localhost:9900/hotel2.jpg',
+      },
+      {
+        type: 'Resort',
+        count: resortCount,
+        image: 'http://localhost:9900/5beachHotel.jpg',
+      },
+      {
+        type: 'Villa',
+        count: villaCount,
+        image: 'http://localhost:9900/hotel3.jpg',
+      },
+      {
+        type: 'Cabin',
+        count: cabinCount,
+        image: 'http://localhost:9900/3starHotel.jpg',
+      },
+      {
+        type: 'Hostel',
+        count: hostelCount,
+        image: 'http://localhost:9900/lisaHotel.jpg',
+      },
     ]);
   } catch (err) {
     console.log(err);

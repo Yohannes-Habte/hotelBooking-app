@@ -1,6 +1,5 @@
 import React from 'react';
 import './TraditionalHotel.scss';
-import { TraditionalHotels } from '../../data/Data';
 import Fetch from '../../hooks/Fetch';
 
 const TraditionalHotel = () => {

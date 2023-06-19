@@ -12,6 +12,7 @@ import { SearchContext } from '../../context/search/SearchProvider';
 import { UserContext } from '../../context/user/UserProvider';
 import Booking from '../../components/modal/Booking';
 import './Hotel.scss';
+import CheckoutSteps from '../../components/checkoutSteps/CheckoutSteps';
 
 const Hotel = () => {
   // Use naviage
@@ -36,7 +37,7 @@ const Hotel = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  console.log(slideIndex)
+  console.log(slideIndex);
 
   // Handle open
   const handleOpen = (imageIndex) => {
@@ -78,14 +79,14 @@ const Hotel = () => {
     if (user) {
       setOpenModal(true);
     } else {
+      alert('Please login!');
       navigate('/login');
     }
   };
 
   return (
     <main className="single-hotel">
-      <Header pages="HotelsHotelAndContact" />
-
+      <CheckoutSteps step1 step2 step3></CheckoutSteps>
       {loading ? (
         'Loading...'
       ) : error ? (

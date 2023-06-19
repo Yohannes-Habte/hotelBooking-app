@@ -7,6 +7,7 @@
 
   .header-container {
     .hotel-image {
+      display: none;
       .image {
       }
     }
@@ -92,6 +93,7 @@
       margin: auto;
 
       .hotel-image {
+        display: block;
         .image {
           width: 100%;
           height: 15rem;
@@ -177,6 +179,7 @@
       width: 100%;
 
       .hotel-image {
+        display: block;
         .image {
           width: 100%;
           height: 33rem;
@@ -186,10 +189,9 @@
 
       .header-title {
         position: absolute;
-        top: 1rem;
+        top: 2rem;
         left: 10%;
-        color: #ffffff;
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       // Heaser search
@@ -207,7 +209,6 @@
         align-items: center;
         height: 30px;
         background-color: white;
-       
 
         .search-input {
           display: flex;
@@ -224,7 +225,6 @@
           position: relative;
           display: flex;
           gap: 0.5rem;
-          
 
           .icon {
           }

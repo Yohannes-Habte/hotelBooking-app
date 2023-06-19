@@ -10,6 +10,9 @@ import Navbar from './components/navbar/Navbar';
 import Contact from './views/contactPage/Contact';
 import Rooms from './views/roomsPage/Rooms';
 import Footer from './components/footer/Footer';
+import StripeSuccess from './views/payment/StripeSuccess';
+import StripeCancel from './views/payment/StripeCancel';
+import HotelReservation from './views/bookingPage/HotelReservation';
 
 const App = () => {
   return (
@@ -17,14 +20,17 @@ const App = () => {
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/hotels' element={<Hotels />} />
-          <Route path='/hotels/:hotelId' element={<Hotel />} />
-          <Route path='/rooms' element={<Rooms />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/hotels" element={<Hotels />} />
+          <Route path="/hotels/:hotelId" element={<Hotel />} />
+          <Route path="/rooms" element={<Rooms />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/payment" element={<HotelReservation />} />
+          <Route path="/stripe-success" element={<StripeSuccess />} />
+          <Route path="/stripe-cancel" element={<StripeCancel />} />
         </Routes>
         <Footer />
       </Router>

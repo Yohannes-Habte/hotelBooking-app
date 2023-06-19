@@ -1,6 +1,5 @@
 import React from 'react';
 import './HotelType.scss';
-import { Hotels } from '../../data/Data';
 import Fetch from '../../hooks/Fetch';
 import PreLoader from '../preLoader/PreLoader';
 
@@ -21,7 +20,7 @@ const HotelType = () => {
           return (
             <section key={index} className="type-container">
               <figure className="image-container">
-                <img src={Hotels[index].image} alt={hotel.type} className="image" />
+                <img src={hotel.image} alt={hotel.type} className="image" />
               </figure>
 
               <article className="title-props">

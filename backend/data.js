@@ -1,7 +1,13 @@
 export const data = {
+  // Hotels
+  hotels: [
+    { image: 'http://localhost:9900/lisaHotel.jpg', name: 'Lisa Hotel' },
+    { image: 'http://localhost:9900/starHotel.jpg', name: 'Star Hotel' },
+    { image: 'http://localhost:9900/successHotel.jpg', name: 'Success Hotel' },
+  ],
   // Header data for client component
   HeaderData: {
-    image: 'http://localhost:9900/hotel6.jpg',
+    image: 'http://localhost:9900/lisaHotel.jpg',
     name: 'Header banner',
     title: 'Your Dream Location ',
   },
@@ -32,7 +38,7 @@ export const data = {
     paragraph6:
       'Eventually, a confirmation message with the relevant information will be sent to your e-mail address.',
     recreation: 'http://localhost:9900/recreation.jpg',
-    name: "Lisa Hotel"
+    name: 'Lisa Hotel',
   },
 
   roomsData: [
@@ -134,7 +140,7 @@ export const data = {
     twitter: 'Twitter',
     // Contacts
     contact: 'Contact',
-    email: 'Email',
+    email: 'mailto:',
     phone: 'Call',
     location: 'Location',
     comment: 'Comments',

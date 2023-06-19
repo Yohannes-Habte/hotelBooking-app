@@ -7,6 +7,7 @@ import { DateRange } from 'react-date-range';
 import HotelsComponent from '../../components/hotel/HotelsComponent';
 import Fetch from '../../hooks/Fetch';
 import PreLoader from '../../components/preLoader/PreLoader';
+import CheckoutSteps from '../../components/checkoutSteps/CheckoutSteps';
 
 const Hotels = () => {
   // useLocation will be used to transfer the state variables from header to this page (hotels page)
@@ -26,8 +27,6 @@ const Hotels = () => {
     }`
   );
 
-  const { data: hotelName } = Fetch(`http://localhost:9900/api/hotels`);
-
   // Function that handle Search button
   const handleSearch = () => {
     reFetch();
@@ -35,8 +34,7 @@ const Hotels = () => {
 
   return (
     <main className="hotels-page">
-      {/* One part of the header called search is ommitted from the hotels page */}
-      <Header pages="HotelsHotelAndContact" />
+      <CheckoutSteps step1 step2></CheckoutSteps>
 
       <section className="hotel-page-container">
         <h1 className="page-title"> Welcome to your Hotel</h1>

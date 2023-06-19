@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import lisaHotel from '../../assets/hotel6.jpg';
 import { MdLocationPin } from 'react-icons/md';
 import { LuCalendarDays } from 'react-icons/lu';
 import { BsPersonPlusFill } from 'react-icons/bs';

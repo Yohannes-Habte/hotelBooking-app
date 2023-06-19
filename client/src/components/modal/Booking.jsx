@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Fetch from '../../hooks/Fetch';
 import './Booking.scss';
 import { SearchContext } from '../../context/search/SearchProvider';
+import CheckoutSteps from '../checkoutSteps/CheckoutSteps';
 
 const Booking = ({ setOpenModal, hotelID }) => {
   const navigate = useNavigate();
@@ -66,8 +67,8 @@ const Booking = ({ setOpenModal, hotelID }) => {
           return data;
         })
       );
+      navigate('/payment');
       setOpenModal(false);
-      navigate('/');
     } catch (error) {
       console.log(error);
     }
@@ -75,6 +76,8 @@ const Booking = ({ setOpenModal, hotelID }) => {
 
   return (
     <section className="modal-booking">
+      <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
+      
       <article className="modal-container">
         <AiOutlineClose
           onClick={() => setOpenModal(false)}
@@ -97,7 +100,7 @@ const Booking = ({ setOpenModal, hotelID }) => {
               {item.roomNumbers.map((roomNumber) => (
                 <div key={roomNumber._id} className="room-container">
                   <label className="label" htmlFor="roomNumber">
-                     {roomNumber.number}
+                    {roomNumber.number}
                   </label>
                   <input
                     type="checkbox"

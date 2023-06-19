@@ -11,6 +11,7 @@ import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { UserContext } from '../../context/user/UserProvider';
 import { USER_ACTION } from '../../context/user/UserReducer';
+import CheckoutSteps from '../../components/checkoutSteps/CheckoutSteps';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -121,6 +122,8 @@ const Login = () => {
 
   return (
     <main className="lagin-page">
+      <CheckoutSteps step1> </CheckoutSteps>
+
       <h1 className="login-title"> Welcome To Your Account </h1>
       <div className="login-container">
         <figure className="login-icon-container">
