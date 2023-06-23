@@ -75,14 +75,14 @@ const Register = () => {
     }
 
     // Check for special character
-    if (password.match(/([§,$,!,%,@,#,^,*,?,_,~])/)) {
+    if (password.match(/([§,$,!,%,@,&,#,^,*,?,_,~])/)) {
       setSpecialCharacter(true);
     } else {
       setSpecialCharacter(false);
     }
 
     // Check for password length
-    if (password.length > 5) {
+    if (password.length > 7) {
       setPasswordLength(true);
     } else {
       setPasswordLength(false);
@@ -161,8 +161,18 @@ const Register = () => {
   // Function to register the user
   const SubmitRegisteredUser = async (event) => {
     event.preventDefault();
-
-    if (password !== confirmPassword) {
+    if (
+      (!firstName,
+      !lastName,
+      !email,
+      !password,
+      !confirmPassword,
+      !phone,
+      !city,
+      !country)
+    ) {
+      toast.error('Fill in the required fields');
+    } else if (password !== confirmPassword) {
       toast.error('Passwords did not match');
     } else {
       const userData = {
@@ -187,7 +197,7 @@ const Register = () => {
         resetAllEnteredData();
         navigate('/login');
       } catch (err) {
-        console.log(err);
+       alert(err.message)
       }
     }
   };
@@ -355,8 +365,8 @@ const Register = () => {
                     onChange={update}
                     className="register-consent-input"
                   />
-                  <span className='accept'>I accept</span>
-                  <NavLink className={"link"}> Terms of Use</NavLink>
+                  <span className="accept">I accept</span>
+                  <NavLink className={'link'}> Terms of Use</NavLink>
                 </div>
                 <button className="register-button"> Register </button>
 
@@ -365,7 +375,7 @@ const Register = () => {
                   <NavLink to="/login"> Log In </NavLink>
                 </p>
               </div>
-              
+
               {/* Password strength display box */}
               <div className="password-preconditions">
                 <aside className="password-checkbox">
@@ -380,11 +390,11 @@ const Register = () => {
 
                   <p className="text">
                     {switchIcon(specialCharacter)} &nbsp; Spceial Character
-                    (!%@#^*?_~)
+                    (!%@#^*&?_~)
                   </p>
 
                   <p className="text">
-                    {switchIcon(passwordLength)} &nbsp; Minimum 6 Characters
+                    {switchIcon(passwordLength)} &nbsp; Minimum 8 Characters
                   </p>
                 </aside>
               </div>

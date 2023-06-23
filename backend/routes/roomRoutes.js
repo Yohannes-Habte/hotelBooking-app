@@ -9,13 +9,22 @@ import {
   updateRoom,
   updateRoomAvailability,
 } from '../controllers/roomController.js';
+import requiredValues from '../validators/requiredValues.js';
+import roomValidator from '../validators/roomValidator.js';
+import checkValidation from '../validators/checkValidation.js';
 
 // Room Router
 const roomRouter = express.Router();
 
 // Room Routes
 
-roomRouter.post('/:hotelId/createRoom', createRoom);
+roomRouter.post(
+  '/:hotelId/createRoom',
+  requiredValues(['title', 'maxPeople', 'price', 'description']),
+  roomValidator(),
+  checkValidation,
+  createRoom
+);
 roomRouter.put('/updateRoom/:id', updateRoom);
 roomRouter.put('/availability/:id', updateRoomAvailability);
 roomRouter.get('/:id', getONeRoom);

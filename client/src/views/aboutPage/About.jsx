@@ -25,7 +25,7 @@ const About = () => {
         <h1 className="about-title"> {data.title} </h1>
 
         <section className="booking-steps">
-          <h2 className="steps-title"> {data.stepsTitle} </h2>
+          <h3 className="steps-title"> {data.stepsTitle} </h3>
 
           {/* Step 1 */}
           <article className="step">

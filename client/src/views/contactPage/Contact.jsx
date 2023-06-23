@@ -7,6 +7,7 @@ import { BiCloudUpload } from 'react-icons/bi';
 import './Contact.scss';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Contact = () => {
   // Comment Id
@@ -102,35 +103,39 @@ const Contact = () => {
   const submitTestimonial = async (event) => {
     event.preventDefault();
 
-    // Upload the image from the form data
-    const data = new FormData();
-    data.append('file', file);
-    data.append('upload_preset', 'lisaConsultFiles');
+    if ((!firstName, !lastName, !email, !file, !message)) {
+      toast.error('Please fill in the required fields');
+    } else {
+      // Upload the image from the form data
+      const data = new FormData();
+      data.append('file', file);
+      data.append('upload_preset', 'lisaConsultFiles');
 
-    try {
-      const response = await axios.post(
-        'https://api.cloudinary.com/v1_1/lisaconsult/image/upload',
-        data
-      );
-      const { url } = response.data;
+      try {
+        const response = await axios.post(
+          'https://api.cloudinary.com/v1_1/lisaconsult/image/upload',
+          data
+        );
+        const { url } = response.data;
 
-      // new comment
-      const newComment = {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        file: url,
-        message: message,
-      };
+        // new comment
+        const newComment = {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          file: url,
+          message: message,
+        };
 
-      await axios.post(
-        `http://localhost:9900/api/comments/createComment`,
-        newComment
-      );
+        await axios.post(
+          `http://localhost:9900/api/comments/createComment`,
+          newComment
+        );
 
-      reset();
-    } catch (error) {
-      console.log(error);
+        reset();
+      } catch (error) {
+        console.log(error.message);
+      }
     }
   };
 

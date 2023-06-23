@@ -395,7 +395,7 @@
 
     .contact-container {
       position: absolute;
-      top: 5rem;
+      top: 1rem;
       left: 50%;
       transform: translateX(-50%);
       width: 100%;
@@ -406,7 +406,7 @@
 
     .contact-container:hover {
       position: absolute;
-      top: 5rem;
+      top: 1rem;
       left: 50%;
       transform: translateX(-50%);
       width: 100%;
@@ -416,7 +416,7 @@
 
       .title {
         @include title;
-        color: #ffffff;
+        color: black;
       }
 
       .form-communication-tools {
