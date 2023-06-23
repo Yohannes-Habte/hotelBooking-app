@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import Header from '../../components/header/Header';
 import {
   MdArrowBackIosNew,
   MdArrowForwardIos,

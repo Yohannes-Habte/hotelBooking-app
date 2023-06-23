@@ -2,6 +2,7 @@ import React from 'react';
 import "./HotelByCity.scss"
 import Fetch from '../../hooks/Fetch';
 import PreLoader from '../preLoader/PreLoader';
+import AlertMessageBox from '../../utiles/AlertMessageBox';
 
 const HotelByCity = () => {
   const { data, loading, error } = Fetch(
@@ -11,13 +12,13 @@ const HotelByCity = () => {
   const { data: hotels } = Fetch(
     `http://localhost:9900/api/pages/home/hotels`
   );
-  console.log(data);
+  console.log("City hotels are:", hotels);
   return (
-    <div className="country-hotels">
+    <div className="city-hotels">
       {loading ? (
         <PreLoader />
       ) : error ? (
-        <div> {error} </div>
+        <AlertMessageBox> {error} </AlertMessageBox>
       ) : (
         hotels.map((hotel, index) => {
           return (
@@ -30,8 +31,8 @@ const HotelByCity = () => {
                 />
               </figure>
 
-              <article className="hotel-title-props">
-                <h2 className="hotel-title"> {hotel.title} </h2>
+              <article className="hotel-city-props">
+                <h2 className="hotel-title"> {hotel.name} </h2>
                 <p className="hotel-props"> {data[index]} Properties </p>
               </article>
             </section>

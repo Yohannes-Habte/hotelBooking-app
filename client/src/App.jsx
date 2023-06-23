@@ -13,11 +13,14 @@ import Footer from './components/footer/Footer';
 import StripeSuccess from './views/payment/StripeSuccess';
 import StripeCancel from './views/payment/StripeCancel';
 import HotelReservation from './views/bookingPage/HotelReservation';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
     <div>
       <Router>
+        <ToastContainer position="top-right" limit={1} />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

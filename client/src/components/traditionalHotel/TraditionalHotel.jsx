@@ -26,16 +26,22 @@ const TraditionalHotel = () => {
                   />
                 </figure>
 
-                <article className="hotel-title-price">
-                  <h2 className="title"> {hotel.name} </h2>
-                  <p className="price"> Price ${hotel.cheapestPrice} </p>
-                  <p> {hotel.city} </p>
-                  {hotel.rating && (
-                    <div>
-                      <span> {hotel.rating} </span>
-                      <span> Excellent </span>
-                    </div>
-                  )}
+                <article className="hotel-details">
+                  <div className="name-price">
+                    <h2 className="title"> {hotel.name} </h2>
+                    <p className="price">
+                      Price <strong>${hotel.cheapestPrice} </strong>
+                    </p>
+                  </div>
+                  <div className="city-rating">
+                    <p> {hotel.city} </p>
+                    {hotel.rating && (
+                      <div className="evaluation">
+                        <span className="rating"> {hotel.rating} </span>
+                        <span> Excellent </span>
+                      </div>
+                    )}
+                  </div>
                 </article>
               </section>
             );

@@ -5,6 +5,13 @@ import './HotelComponent.scss';
 const HotelsComponent = ({ hotel, handleSearch }) => {
   return (
     <div className="each-hotel-container">
+      {/*  Hotel details part */}
+      <article className="description-container">
+        <h3 className="sub-title"> {hotel.name} </h3>
+        <span className="hotel-description">{hotel.description}</span>
+      </article>
+
+      {/* Hotel image and assessments part */}
       <div className="hotel-image-evaluation">
         {/*  Image part */}
         <figure className="image-container">
@@ -39,12 +46,6 @@ const HotelsComponent = ({ hotel, handleSearch }) => {
           </div>
         </div>
       </div>
-
-      {/*  Hotel details part */}
-      <article className="description-container">
-        <h3 className="sub-title"> {hotel.name} </h3>
-        <span className="hotel-description">{hotel.description}</span>
-      </article>
     </div>
   );
 };

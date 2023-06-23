@@ -13,16 +13,15 @@
     }
 
     .header-title {
+      display: none;
     }
 
     // Header search
     .header-search {
       width: $mobile;
       margin: auto;
-      display: flex;
-      justify-content: space-between;
       @include shadow3;
-      padding: 1rem 0;
+      padding: 1rem 1rem 0 1rem;
       border-radius: $radius;
 
       .search-input {
@@ -30,11 +29,11 @@
         gap: 0.5rem;
 
         .icon {
+          font-size: $afs;
         }
 
         .input-field {
-          border: none;
-          outline: none;
+          @include inputField2;
           cursor: pointer;
 
           &::placeholder {
@@ -48,10 +47,13 @@
         gap: 0.5rem;
 
         .icon {
+          font-size: $afs;
         }
 
         .date-range {
+          @include inputField2;
           color: #8a8787;
+          cursor: pointer;
         }
       }
 
@@ -60,8 +62,10 @@
         gap: 0.5rem;
 
         .icon {
+          font-size: $afs;
         }
         .select-quantity {
+          @include inputField2;
           color: #8a8787;
         }
       }
@@ -102,17 +106,13 @@
       }
 
       .header-title {
-        position: absolute;
-        top: 1rem;
-        left: 10%;
-        color: $green;
-        font-size: 2rem;
+        display: none;
       }
 
       // Header search
       .header-search {
         width: 100%;
-        max-width: $tablet;
+        max-width: $mobile;
         margin: auto;
         padding: 1.5rem 0;
         display: flex;
@@ -128,11 +128,14 @@
         .search-input {
           display: flex;
           gap: 0.5rem;
+          padding: 0;
 
           .icon {
+            font-size: $afs;
           }
 
           .input-field {
+            @include inputField2;
           }
         }
 
@@ -141,9 +144,12 @@
           gap: 0.5rem;
 
           .icon {
+            font-size: $afs;
           }
 
           .date-range {
+            @include inputField2;
+            font-size: $sfs;
           }
         }
 
@@ -152,14 +158,18 @@
           gap: 0.5rem;
 
           .icon {
+            font-size: $afs;
           }
 
           .select-quantity {
+            @include inputField2;
+            font-size: $sfs;
           }
         }
 
         .btn-container {
           .search-btn {
+            @include button;
           }
         }
       }
@@ -188,6 +198,7 @@
       }
 
       .header-title {
+        display: block;
         position: absolute;
         top: 2rem;
         left: 10%;

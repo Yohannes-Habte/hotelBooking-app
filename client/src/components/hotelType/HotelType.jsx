@@ -15,7 +15,6 @@ const HotelType = () => {
       ) : error ? (
         <div> {error} </div>
       ) : (
-        
         data.map((hotel, index) => {
           return (
             <section key={index} className="type-container">
@@ -25,7 +24,9 @@ const HotelType = () => {
 
               <article className="title-props">
                 <h2 className="title"> {hotel.type} </h2>
-                <p className="props"> {hotel.count} {hotel.type} </p>
+                <p className="props">
+                  <strong> {hotel.count}</strong> {hotel.type}
+                </p>
               </article>
             </section>
           );

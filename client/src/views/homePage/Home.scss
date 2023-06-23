@@ -18,6 +18,10 @@
     }
 
     .city-hotel-title {
+      display: none;
+    }
+
+    .modern-hotel-title {
       @include subTitle;
     }
   }
@@ -41,6 +45,10 @@
       }
 
       .city-hotel-title {
+        display: none;
+      }
+
+      .modern-hotel-title {
         @include subTitle;
       }
     }
@@ -65,7 +73,14 @@
       }
 
       .city-hotel-title {
+        display: block;
         @include subTitle;
+        text-align: left;
+      }
+
+      .modern-hotel-title {
+        @include subTitle;
+        text-align: left;
       }
     }
   }

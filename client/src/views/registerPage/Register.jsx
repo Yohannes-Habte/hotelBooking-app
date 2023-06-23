@@ -355,8 +355,8 @@ const Register = () => {
                     onChange={update}
                     className="register-consent-input"
                   />
-                  <span>I accept</span>
-                  <NavLink> Terms of Use</NavLink>
+                  <span className='accept'>I accept</span>
+                  <NavLink className={"link"}> Terms of Use</NavLink>
                 </div>
                 <button className="register-button"> Register </button>
 
@@ -365,7 +365,8 @@ const Register = () => {
                   <NavLink to="/login"> Log In </NavLink>
                 </p>
               </div>
-
+              
+              {/* Password strength display box */}
               <div className="password-preconditions">
                 <aside className="password-checkbox">
                   <h3>Checking Password Confirmation</h3>

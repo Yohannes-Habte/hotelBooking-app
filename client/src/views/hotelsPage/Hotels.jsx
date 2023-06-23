@@ -8,6 +8,7 @@ import HotelsComponent from '../../components/hotel/HotelsComponent';
 import Fetch from '../../hooks/Fetch';
 import PreLoader from '../../components/preLoader/PreLoader';
 import CheckoutSteps from '../../components/checkoutSteps/CheckoutSteps';
+import AlertMessageBox from '../../utiles/AlertMessageBox';
 
 const Hotels = () => {
   // useLocation will be used to transfer the state variables from header to this page (hotels page)
@@ -158,7 +159,7 @@ const Hotels = () => {
             {loading ? (
               <PreLoader />
             ) : error ? (
-              <div> {error} </div>
+              <AlertMessageBox> {error} </AlertMessageBox>
             ) : (
               <React.Fragment>
                 {data.map((hotel) => {

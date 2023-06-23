@@ -12,6 +12,7 @@ import { RiLockPasswordFill } from 'react-icons/ri';
 import { UserContext } from '../../context/user/UserProvider';
 import { USER_ACTION } from '../../context/user/UserReducer';
 import CheckoutSteps from '../../components/checkoutSteps/CheckoutSteps';
+import ErrorMessage from '../../utiles/ErrorMessage';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -97,32 +98,41 @@ const Login = () => {
   const submitUserLogin = async (event) => {
     event.preventDefault();
 
-    // The body
-    const loginUser = {
-      email: email,
-      password: password,
-    };
-
     dispatch({ type: USER_ACTION.LOGIN_START });
-    try {
-      const { data } = await axios.post(
-        `http://localhost:9900/api/users/login`,
-        loginUser
-      );
-      dispatch({ type: USER_ACTION.LOGIN_SUCCESS, payload: data.details });
-      localStorage.setItem('user', JSON.stringify(data));
+    if (!email) {
+      toast.error('Please enter your email!');
+    } else if (!password) {
+      toast.error('Please enter password!');
+    } else {
+      try {
+        // The body
+        const loginUser = {
+          email: email,
+          password: password,
+        };
 
-      resetVariables();
-      navigate('/');
-    } catch (err) {
-      console.log(err);
-      dispatch({ type: USER_ACTION.LOGIN_FAIL, payload: err.data });
+        const { data } = await axios.post(
+          `http://localhost:9900/api/users/login`,
+          loginUser
+        );
+        dispatch({ type: USER_ACTION.LOGIN_SUCCESS, payload: data.details });
+        localStorage.setItem('user', JSON.stringify(data));
+
+        resetVariables();
+        navigate('/');
+      } catch (err) {
+        console.log(err);
+        dispatch({
+          type: USER_ACTION.LOGIN_FAIL,
+          payload: toast.error(ErrorMessage(err)),
+        });
+      }
     }
   };
 
   return (
     <main className="lagin-page">
-      <CheckoutSteps step1> </CheckoutSteps>
+      <CheckoutSteps step1 className="step-one"> </CheckoutSteps>
 
       <h1 className="login-title"> Welcome To Your Account </h1>
       <div className="login-container">
@@ -130,7 +140,7 @@ const Login = () => {
           <FaUserAlt className="login-icon" />
         </figure>
         <fieldset className="login-fieldset">
-          <legend className="login-legend">User Login </legend>
+          <legend className="login-legend"> User Login </legend>
           <form onSubmit={submitUserLogin} className="login-form">
             <div className="input-container">
               <MdEmail className="icon" />
@@ -176,7 +186,7 @@ const Login = () => {
                 <span>Keep me signed in</span>
               </div>
               <div className="forget-password">
-                <a href=""> Forget your password? </a>
+                <a href="" className='link'> Forget your password? </a>
               </div>
             </div>
             <button className="login-button"> Log In</button>
