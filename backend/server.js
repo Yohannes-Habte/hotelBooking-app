@@ -20,7 +20,7 @@ import globalErrorHandler from './middlewares/globalErrorHandler.js';
 // Express App
 const app = express();
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({origin: ["http://localhost:3000", "http://hotel-booking-app.onrender.com"]}));
 app.use(express.json());
 const port = process.env.PORT || 9900;
 
