@@ -140,6 +140,7 @@
     background-color: $main;
 
     .about-container {
+      position: relative;
       width: $laptop;
       margin: 1rem auto;
       display: grid;
@@ -205,16 +206,20 @@
 
       .image-container {
         grid-area: image;
-        @include shadow;
+      
 
         .image {
-          width: 100%;
+          position: absolute;
+          top: 5rem;
+          width: 32rem;
+          height: 25rem;
           object-fit: cover;
           border-radius: $radius;
         }
 
         .image-title {
-          @include subTitle;
+          position: absolute;
+          top: 30.5rem;
           color: darkblue;
           font-size: $afs;
         }

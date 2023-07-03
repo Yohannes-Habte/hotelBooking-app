@@ -103,7 +103,7 @@ const Contact = () => {
   const submitTestimonial = async (event) => {
     event.preventDefault();
 
-    if ((!firstName, !lastName, !email, !file, !message)) {
+    if ((!firstName || !lastName || !email || !file || !message)) {
       toast.error('Please fill in the required fields');
     } else {
       // Upload the image from the form data

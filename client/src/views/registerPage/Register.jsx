@@ -162,14 +162,14 @@ const Register = () => {
   const SubmitRegisteredUser = async (event) => {
     event.preventDefault();
     if (
-      (!firstName,
-      !lastName,
-      !email,
-      !password,
-      !confirmPassword,
-      !phone,
-      !city,
-      !country)
+      !firstName ||
+      !lastName ||
+      !email ||
+      !password ||
+      !confirmPassword ||
+      !phone ||
+      !city ||
+      !country
     ) {
       toast.error('Fill in the required fields');
     } else if (password !== confirmPassword) {
@@ -197,7 +197,7 @@ const Register = () => {
         resetAllEnteredData();
         navigate('/login');
       } catch (err) {
-       alert(err.message)
+        alert(err.message);
       }
     }
   };
