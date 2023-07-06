@@ -1,25 +1,25 @@
 @import '../../styles/Variables.scss';
 @import '../../styles/Mixins.scss';
 
+/* Mobile screen size */
 .navbar {
-  height: 4rem;
+  width: 100%;
   border-bottom: 1px solid $hr;
   font-size: $afs;
   color: gray;
   background-color: $nav-menu1;
   display: flex;
   align-items: center;
+  position: relative;
 
   .wrapper {
-    position: relative;
     width: 100%;
-    padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
 
     .search {
-      width: 40%;
+      width: 90%;
+      margin: 0.3rem auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -27,6 +27,7 @@
       border-radius: $radius;
       background-color: white;
       padding: 0.3rem;
+   
 
       .search-icon {
         cursor: pointer;
@@ -52,7 +53,7 @@
       left: 1.5rem;
       height: fit-content;
     }
-    
+
     .button-container {
       .delete-all {
         @include btn2;
@@ -60,8 +61,10 @@
     }
     .items {
       display: flex;
-      align-items: center;
       gap: 1rem;
+      position: absolute;
+      top: -1.3rem;
+      right: 0.5rem;
 
       .item {
         display: flex;
@@ -118,6 +121,146 @@
           width: 2rem;
           border-radius: 50%;
           cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/* Tablet screen size */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Labtop screen size */
+@media screen and (min-width: 1024px) {
+  .navbar {
+    width: 100%;
+    height: 4rem;
+    border-bottom: 1px solid $hr;
+    font-size: $afs;
+    color: gray;
+    background-color: $nav-menu1;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .wrapper {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      .search {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: $border;
+        border-radius: $radius;
+        background-color: white;
+        padding: 0.3rem;
+        position: absolute;
+        left: 1rem;
+
+        .search-icon {
+          cursor: pointer;
+        }
+
+        .navbar-input {
+          width: 100%;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          padding: 0.5rem 1rem;
+          font-size: $afs;
+
+          &::placeholder {
+            font-size: $afs;
+          }
+        }
+      }
+
+      .search-result {
+        position: absolute;
+        top: 5rem;
+        left: 1.5rem;
+        height: fit-content;
+      }
+
+      .button-container {
+        position: absolute;
+        top: 0.5rem;
+        right: 30%;
+        .delete-all {
+          @include btn2;
+        }
+      }
+      .items {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        position: absolute;
+        top: 1.5rem;
+        right: 0.5rem;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          font-size: $sfs;
+          position: relative;
+
+          .navbar-icon {
+            font-size: $afs;
+            color: $title;
+            cursor: pointer;
+          }
+
+          .counter {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            font-size: 0.5rem;
+            font-weight: $lfs;
+            background-color: red;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -10px;
+            right: -5px;
+            cursor: pointer;
+          }
+
+          .logout-admin {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+
+            .first-name {
+              font-size: $sfs;
+            }
+
+            .profile-icon {
+              font-size: $afs;
+              color: $title;
+              cursor: pointer;
+
+              &:hover {
+                color: $color;
+              }
+            }
+          }
+
+          .navbar-profile {
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            cursor: pointer;
+          }
         }
       }
     }

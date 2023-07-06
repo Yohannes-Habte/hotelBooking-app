@@ -73,7 +73,7 @@ const Navbar = ({ itemName }) => {
           <FaSearch className="search-icon" />
         </div>
 
-        <div className='search-result'>
+        <div className="search-result">
           {/* Render searched users that display 10 users */}
           {loading ? (
             <div>Loading...</div>

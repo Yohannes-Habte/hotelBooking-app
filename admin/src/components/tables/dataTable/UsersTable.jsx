@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './DataTable.scss';
 import { NavLink, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import useFetch from '../../../hooks/useFetch';
 
 const UsersTable = ({ itemName, searching }) => {
   // Locat state variables for specific user, hotel or room

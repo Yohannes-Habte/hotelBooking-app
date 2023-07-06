@@ -1,35 +1,78 @@
 @import '../../styles/Variables.scss';
 @import '../../styles/Mixins.scss';
 
-.sidebar {
-  background-color: $aside;
-  flex: 1;
-  border-right: 0.5px solid red;
-  min-height: 100vh;
+/* Mobile screen size */
+.sidebar-header {
+  background-color: #c5d5f6;
+  border-right: 0.5px solid #222;
+  position: relative;
 
-  .sidbar-logo {
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .sidebar {
+    flex: 1;
+    padding: 0 0.5rem;
+    width: 11rem;
+    margin-left: -11rem;
+    height: 2rem;
 
-    .logo {
-      font-size: $aafs;
-      font-weight: $aafw;
-      color: $logo;
+    .sidbar-logo {
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .logo {
+        font-size: $aafs;
+        font-weight: $aafw;
+        color: $logo;
+      }
     }
-  }
 
-  .horizontal-line {
-    height: 0;
-    border: $border;
-  }
+    .horizontal-line {
+      height: 0;
+      border: $border;
+    }
 
-  .sidbar-lists {
-    padding-left: 1rem;
+    .sidbar-lists {
+      padding-left: 1rem;
 
-    .list-items {
-      .sub-title {
+      .list-items {
+        .sub-title {
+          text-transform: uppercase;
+          font-size: 0.6rem;
+          color: gray;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+        }
+        .item {
+          padding: 0.2rem 0.8rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $sidebar;
+          }
+
+          .sidebar-icon {
+            color: $title;
+          }
+
+          .span-text {
+            font-size: 1rem;
+            font-weight: $afw;
+            color: gray;
+
+            &:hover {
+              color: $font;
+            }
+          }
+        }
+      }
+    }
+
+    .backgroung-color {
+      padding-left: 1rem;
+      .bg-title {
         text-transform: uppercase;
         font-size: 0.6rem;
         color: gray;
@@ -38,67 +81,293 @@
         display: flex;
         align-items: center;
       }
-      .item {
-        padding: 0.2rem 0.8rem;
-        cursor: pointer;
 
-        &:hover {
-          background-color: $sidebar;
-        }
+      .color-options {
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+        gap: 1rem;
+        .color-option {
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: $radius;
+          border: 1px solid purple;
+          cursor: pointer;
 
-        .sidebar-icon {
-          color: $title;
-        }
+          &:nth-child(1) {
+            background-color: #f0f8ff;
+          }
 
-        .span-text {
-          font-size: 1rem;
-          font-weight: $afw;
-          color: gray;
+          &:nth-child(2) {
+            background-color: gray;
+          }
 
-          &:hover {
-            color: $font;
+          &:nth-child(3) {
+            background-color: #000000;
           }
         }
       }
     }
   }
 
-  .backgroung-color {
+  .active-sidebar {
+    margin-left: 0;
+    height: fit-content;
+  }
+
+  .hamburger-menu {
+    display: block;
+    width: 100%;
     padding-left: 1rem;
-    .bg-title {
-      text-transform: uppercase;
-      font-size: 0.6rem;
-      color: gray;
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .fa-times {
+      margin-left: 90%;
+      margin-top: 0.2rem;
     }
+  }
+}
 
-    .color-options {
-      display: flex;
-      align-items: center;
-      margin: 1rem;
-      gap: 1rem;
-      .color-option {
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: $radius;
-        border: 1px solid purple;
-        cursor: pointer;
+/* Tablet screen size */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .sidebar-header {
+    background-color: #c5d5f6;
+    border-right: 0.5px solid #222;
+    position: relative;
 
-        &:nth-child(1) {
-          background-color: #f0f8ff;
-        }
+    .sidebar {
+      flex: 1;
+      padding: 0 0.5rem;
+      width: 11rem;
+      margin-left: -11rem;
+      height: 2rem;
 
-        &:nth-child(2) {
-          background-color: gray;
-        }
+      .sidbar-logo {
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        &:nth-child(3) {
-          background-color: #000000;
+        .logo {
+          font-size: $aafs;
+          font-weight: $aafw;
+          color: $logo;
         }
       }
+
+      .horizontal-line {
+        height: 0;
+        border: $border;
+      }
+
+      .sidbar-lists {
+        padding-left: 1rem;
+
+        .list-items {
+          .sub-title {
+            text-transform: uppercase;
+            font-size: 0.6rem;
+            color: gray;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+          }
+          .item {
+            padding: 0.2rem 0.8rem;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $sidebar;
+            }
+
+            .sidebar-icon {
+              color: $title;
+            }
+
+            .span-text {
+              font-size: 1rem;
+              font-weight: $afw;
+              color: gray;
+
+              &:hover {
+                color: $font;
+              }
+            }
+          }
+        }
+      }
+
+      .backgroung-color {
+        padding-left: 1rem;
+        .bg-title {
+          text-transform: uppercase;
+          font-size: 0.6rem;
+          color: gray;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+        }
+
+        .color-options {
+          display: flex;
+          align-items: center;
+          margin: 1rem;
+          gap: 1rem;
+          .color-option {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: $radius;
+            border: 1px solid purple;
+            cursor: pointer;
+
+            &:nth-child(1) {
+              background-color: #f0f8ff;
+            }
+
+            &:nth-child(2) {
+              background-color: gray;
+            }
+
+            &:nth-child(3) {
+              background-color: #000000;
+            }
+          }
+        }
+      }
+    }
+
+    .active-sidebar {
+      margin-left: 0;
+    }
+
+    .hamburger-menu {
+      display: block;
+      padding-left: 1rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/* Labtop screen size */
+@media screen and (min-width: 1024px) {
+  .sidebar-header {
+    background-color: $aside;
+    border-right: 0.5px solid #222;
+
+    .sidebar {
+      flex: 1;
+      width: 11rem;
+      padding: 0 0.5rem;
+      margin-left: 0;
+
+      .sidbar-logo {
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo {
+          font-size: $aafs;
+          font-weight: $aafw;
+          color: $logo;
+        }
+      }
+
+      .horizontal-line {
+        height: 0;
+        border: $border;
+      }
+
+      .sidbar-lists {
+        padding-left: 1rem;
+
+        .list-items {
+          .sub-title {
+            text-transform: uppercase;
+            font-size: 0.6rem;
+            color: gray;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+          }
+          .item {
+            padding: 0.2rem 0.8rem;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $sidebar;
+            }
+
+            .sidebar-icon {
+              color: $title;
+            }
+
+            .span-text {
+              font-size: 1rem;
+              font-weight: $afw;
+              color: gray;
+
+              &:hover {
+                color: $font;
+              }
+            }
+          }
+        }
+      }
+
+      .backgroung-color {
+        padding-left: 1rem;
+        .bg-title {
+          text-transform: uppercase;
+          font-size: 0.6rem;
+          color: gray;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+        }
+
+        .color-options {
+          display: flex;
+          align-items: center;
+          margin: 1rem;
+          gap: 1rem;
+          .color-option {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: $radius;
+            border: 1px solid purple;
+            cursor: pointer;
+
+            &:nth-child(1) {
+              background-color: #f0f8ff;
+            }
+
+            &:nth-child(2) {
+              background-color: gray;
+            }
+
+            &:nth-child(3) {
+              background-color: #000000;
+            }
+          }
+        }
+      }
+    }
+
+    .hamburger-menu {
+      display: none;
     }
   }
 }

@@ -2,6 +2,7 @@
 @import './Mixins.scss';
 
 .app.gray {
+  width: 100%;
   .home-page {
     .home-contianer {
       background-color: $grayMode-bg;
@@ -17,41 +18,45 @@
   }
 
   // Sidebar
-  .sidebar {
+  .sidebar-header {
     background-color: $grayMode-navbar-bg;
     border-color: rgb(86, 84, 84);
+    .sidebar {
+      background-color: $grayMode-navbar-bg;
+      border-color: rgb(86, 84, 84);
 
-    .logo {
-      color: $grayMode-fontColor;
-    }
-
-    .horizontal-line {
-      height: 0;
-      border: 1px solid gray;
-    }
-
-    .sidbar-lists {
-      .sub-title {
+      .logo {
         color: $grayMode-fontColor;
       }
 
-      .span-text {
+      .horizontal-line {
+        height: 0;
+        border: 1px solid gray;
+      }
+
+      .sidbar-lists {
+        .sub-title {
+          color: $grayMode-fontColor;
+        }
+
+        .span-text {
+          color: $grayMode-fontColor;
+        }
+      }
+
+      .item {
+        &:hover {
+          background-color: $grayMode-hover;
+        }
+
+        .sidebar-icon {
+          color: $grayMode-fontColor;
+        }
+      }
+
+      .bg-title {
         color: $grayMode-fontColor;
       }
-    }
-
-    .item {
-      &:hover {
-        background-color: $grayMode-hover;
-      }
-
-      .sidebar-icon {
-        color: $grayMode-fontColor;
-      }
-    }
-
-    .bg-title {
-      color: $grayMode-fontColor;
     }
   }
 

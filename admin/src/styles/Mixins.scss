@@ -196,3 +196,17 @@
     transform: scale(0.95);
   }
 }
+
+
+// Table cell
+
+@mixin tableHeaderCell {
+  padding: 1rem 0.5rem;
+  font-weight: $aafw;
+}
+
+@mixin tableBodyCell {
+  border-bottom: 1px solid #ddd;
+  padding: 0.4rem 0.5rem;
+  width: 15rem;
+}
