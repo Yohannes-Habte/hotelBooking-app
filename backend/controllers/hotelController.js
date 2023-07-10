@@ -97,10 +97,9 @@ export const hotelCount = async (req, res, next) => {
 
 // Get All Rooms for a single hotel
 export const getRooms = async (req, res, next) => {
-  const hotelId = req.params.hotelId;
   try {
-    const hotelRooms = await Hotel.findById(hotelId);
-    res.status(200).json(hotelRooms.rooms);
+    const hotel = await Hotel.findById(req.params.id);
+    res.status(200).json(hotel.rooms);
   } catch (error) {
     console.log(error);
     next(createError(400, 'Rooms coud not be accessed! Please try again!'));

@@ -24,10 +24,10 @@ const Home = () => {
 
         <div className="chats-container">
           <FeaturedChart />
-          <Chart  />
+          <Chart />
         </div>
 
-        <article className='list-container'>  
+        <article className="list-container">
           <TableReact />
         </article>
       </section>

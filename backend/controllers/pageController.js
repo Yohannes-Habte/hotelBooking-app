@@ -3,17 +3,34 @@ import createError from 'http-errors';
 
 // Get all rooms page photos
 export const photos = async (req, res, next) => {
-  res.status(200).send(data.roomsData);
+  const bedrooms = data.roomsData;
+  if (bedrooms) {
+    res.status(200).send(bedrooms);
+  } else {
+    next(createError(500, 'Rooms could not be accessed. Please try again!'));
+  }
 };
 
 // Get Header component data
 export const getHeader = async (req, res, next) => {
-  res.status(200).send(data.HeaderData);
+  const hotel = data.HeaderData;
+  if (hotel) {
+    res.status(200).send(hotel);
+  } else {
+    next(
+      createError(500, 'Hotel image could not be accessed. Please try again!')
+    );
+  }
 };
 
 // Get Footer component data
 export const getFooter = async (req, res, next) => {
-  res.status(200).send(data.FooterData);
+  const footerInfo = data.roomsData;
+  if (footerInfo) {
+    res.status(200).send(data.FooterData);
+  } else {
+    next(createError(500, 'Footer data could not be accessed. Please try again!'));
+  }
 };
 
 // Get About page data
@@ -33,5 +50,10 @@ export const getHotels = async (req, res, next) => {
 
 // Get About page data
 export const getAbout = async (req, res, next) => {
-  res.status(200).send(data.AboutData);
+  const about = data.roomsData;
+  if (about) {
+    res.status(200).send(data.AboutData);
+  } else {
+    next(createError(500, 'Rooms could not be accessed. Please try again!'));
+  }
 };

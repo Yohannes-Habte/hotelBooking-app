@@ -20,27 +20,20 @@ const Hotel = () => {
   const { dates, options } = useContext(SearchContext);
   const { user } = useContext(UserContext);
 
-  // Get hotel Id using useLocation or useParams
-  const location = useLocation();
-  const hotelID = location.pathname.split('/')[2];
-  console.log(hotelID);
-  const params = useParams();
-  const hoteId = params.hotelId;
-
-  // Global state variables
-  const { data, loading, error } = Fetch(
-    `http://localhost:9900/api/hotels/${hoteId}`
-  );
-
   // Local state variables
   const [slideIndex, setSlideIndex] = useState(0);
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  console.log(slideIndex);
+
+  // Get hotel Id using useLocation or useParams
+  const location = useLocation();
+  const hotelID = location.pathname.split('/')[2];
+  const params = useParams();
+  const hoteId = params.hotelId;
 
   // Handle open
-  const handleOpen = (imageIndex) => {
-    setSlideIndex(imageIndex);
+  const handleOpen = () => {
+    setSlideIndex(slideIndex);
     setOpen(true);
   };
 
@@ -57,6 +50,11 @@ const Hotel = () => {
     setSlideIndex(newSlideNumber);
   };
 
+  // Global state variables
+  const { data, loading, error } = Fetch(
+    `http://localhost:9900/api/hotels/${hoteId}`
+  );
+
   // Total millisenconds per day
   const totalMillisecondsPerDay = 1000 * 60 * 60 * 24;
 
@@ -68,7 +66,6 @@ const Hotel = () => {
   };
 
   const totalDays = numberOfDays(dates[0].endDate, dates[0].startDate);
-  console.log(totalDays);
 
   // Function that calculate the total cost for the hotel
   const totalServiceCost = totalDays * data.cheapestPrice * options.room;
@@ -143,7 +140,7 @@ const Hotel = () => {
             <div className="hotel-images-container">
               {data.photos?.map((photo) => {
                 return (
-                  <figure key={photo._id} className="hotel-image-wrapper">
+                  <figure key={photo} className="hotel-image-wrapper">
                     <img
                       onClick={() => handleOpen(photo)}
                       src={photo}

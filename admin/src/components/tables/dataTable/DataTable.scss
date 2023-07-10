@@ -7,6 +7,8 @@
   padding: 1rem;
 
   .add-user {
+    width: $tablet;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +60,7 @@
         }
 
         .body-cell-user {
-          max-width: 180px;
+          max-width: 150px;
           border-bottom: 1px solid #ddd;
           padding: 0 0.5rem;
 
@@ -81,9 +83,10 @@
         }
 
         .body-cell-email {
-          max-width: 180px;
+          max-width: 9rem;
           border-bottom: 1px solid #ddd;
           padding: 0 0.5rem;
+          
         }
 
         .body-cell-age {
@@ -150,6 +153,8 @@
     padding: 1rem;
   
     .add-user {
+      width: $tablet;
+      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -201,7 +206,7 @@
           }
   
           .body-cell-user {
-            max-width: 180px;
+            max-width: 150px;
             border-bottom: 1px solid #ddd;
             padding: 0 0.5rem;
   
@@ -224,9 +229,10 @@
           }
   
           .body-cell-email {
-            max-width: 180px;
+            max-width: 9rem;
             border-bottom: 1px solid #ddd;
             padding: 0 0.5rem;
+            
           }
   
           .body-cell-age {

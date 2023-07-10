@@ -45,7 +45,7 @@ hotelRouter.post(
 );
 hotelRouter.put('/updateHotel/:id', updateHotel);
 hotelRouter.get('/:id', getOneHotel);
-hotelRouter.get('/:hotelId/rooms', getRooms);
+hotelRouter.get('/:id/rooms', getRooms); 
 hotelRouter.get('/rooms/photos/access', getPhotos);
 hotelRouter.get('/', getAllHotels);
 hotelRouter.get('/countByCity/number', countByCity);

@@ -31,10 +31,11 @@ const Sidebar = () => {
   };
 
   return (
-    <header className='sidebar-header'>
+    <header className="sidebar-header">
+      
       <nav className={open ? 'sidebar active-sidebar' : 'sidebar'}>
         <div className="sidbar-logo">
-          <NavLink to={'/'}>
+        <NavLink to={'/'}>
             <span className="logo">LisaBooking</span>
           </NavLink>
         </div>

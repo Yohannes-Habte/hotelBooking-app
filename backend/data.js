@@ -43,76 +43,91 @@ export const data = {
 
   roomsData: [
     {
+      _id: "0",
       image: 'http://localhost:9900/room1.jpg',
       title: 'Room One',
     },
 
     {
+      _id: "1",
       image: 'http://localhost:9900/room2.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "2",
       image: 'http://localhost:9900/room3.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "3",
       image: 'http://localhost:9900/room4.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "4",
       image: 'http://localhost:9900/room5.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "5",
       image: 'http://localhost:9900/room6.jpg',
       title: 'Room One',
     },
 
     {
+      _id: "6",
       image: 'http://localhost:9900/room7.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "7",
       image: 'http://localhost:9900/room8.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "8",
       image: 'http://localhost:9900/room9.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "9",
       image: 'http://localhost:9900/room10.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "10",
       image: 'http://localhost:9900/room11.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "11",
       image: 'http://localhost:9900/room12.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "12",
       image: 'http://localhost:9900/room13.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "13",
       image: 'http://localhost:9900/room14.jpg',
       title: 'Room Two',
     },
 
     {
+      _id: "14",
       image: 'http://localhost:9900/room15.jpg',
       title: 'Room Two',
     },
