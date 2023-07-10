@@ -19,7 +19,7 @@ import { ADMIN_ACTION } from '../../context/admin/AdminReducer';
 const Sidebar = () => {
   // Global variables
   const { dispatch } = useContext(BackgroundContext);
-  const { dispatch: adminDispatch } = useContext(AdminContext);
+  const { user, dispatch: adminDispatch } = useContext(AdminContext);
 
   // local variable for hamburger menu
   const [open, setOpen] = useState(false);
@@ -32,10 +32,9 @@ const Sidebar = () => {
 
   return (
     <header className="sidebar-header">
-      
       <nav className={open ? 'sidebar active-sidebar' : 'sidebar'}>
         <div className="sidbar-logo">
-        <NavLink to={'/'}>
+          <NavLink to={'/'}>
             <span className="logo">LisaBooking</span>
           </NavLink>
         </div>
@@ -100,15 +99,16 @@ const Sidebar = () => {
             <p className="sub-title"> User </p>
             <li className="item">
               <CgProfile className="sidebar-icon" onClick={logoutAdmin} />
-              <span className="span-text" onClick={logoutAdmin}>
-                {' '}
-                Profile{' '}
+              <span className="span-text">
+                {user.firstName}
               </span>
             </li>
 
             <li className="item">
-              <AiOutlineLogout className="sidebar-icon" />
-              <span className="span-text"> Logout </span>
+              <AiOutlineLogout onClick={logoutAdmin} className="sidebar-icon" />
+              <span onClick={logoutAdmin} className="span-text">
+                Logout
+              </span>
             </li>
           </ul>
         </div>
