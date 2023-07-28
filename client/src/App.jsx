@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './views/homePage/Home';
 import About from './views/aboutPage/About';
 import Hotels from './views/hotelsPage/Hotels';
@@ -34,6 +34,7 @@ const App = () => {
           <Route path="/payment" element={<HotelReservation />} />
           <Route path="/stripe-success" element={<StripeSuccess />} />
           <Route path="/stripe-cancel" element={<StripeCancel />} />
+          <Route path="*" element={ <Navigate to={"/"} /> } />
         </Routes>
         <Footer />
       </Router>
