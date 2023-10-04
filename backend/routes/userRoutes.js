@@ -14,7 +14,7 @@ import requiredValues from '../validators/requiredValues.js';
 import registerValidator from '../validators/registerValidator.js';
 import checkValidation from '../validators/checkValidation.js';
 
-// Room Router
+// User Router
 const userRouter = express.Router();
 
 // User routes

@@ -88,33 +88,30 @@ const NewUser = () => {
                 </label>
               </div>
 
-              
-                {userInputs.map((input) => {
-                  return (
-                    <div key={input.id} className="input-container">
-                      <input
-                        type={input.type}
-                        name={input.name}
-                        id={input.id}
-                        onChange={handleChange}
-                        placeholder={input.placeholder}
-                        className="input-field"
-                      />
-                      <label htmlFor="" className="input-label">
-                        {input.label}
-                      </label>
-                      <span className="input-highlight"></span>
-                    </div>
-                  );
-                })}
-              
+              {userInputs.map((input) => {
+                return (
+                  <div key={input.id} className="input-container">
+                    <input
+                      type={input.type}
+                      name={input.name}
+                      id={input.id}
+                      onChange={handleChange}
+                      placeholder={input.placeholder}
+                      className="input-field"
+                    />
+                    <label htmlFor="" className="input-label">
+                      {input.label}
+                    </label>
+                    <span className="input-highlight"></span>
+                  </div>
+                );
+              })}
 
               <div className="btn-container">
                 <button className="btn">Send</button>
               </div>
-              
-              <div className="btn-container">
-              </div>
+
+              <div className="btn-container"></div>
             </form>
           </div>
         </div>

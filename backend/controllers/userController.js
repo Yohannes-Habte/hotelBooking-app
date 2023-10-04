@@ -100,7 +100,7 @@ export const loginUser = async (req, res, next) => {
     }
   } catch (error) {
     console.log(error);
-    next(createError(500, 'You could not sign up! Please try again'));
+    next(createError(500, 'You could not sign in! Please try again'));
   }
 };
 

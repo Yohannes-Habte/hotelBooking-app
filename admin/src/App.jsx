@@ -26,13 +26,12 @@ const App = () => {
   const { user } = useContext(AdminContext);
 
   // Route Protection function from accessing non-admin users
-
-const ProtectedRoute = ({ children }) => {
-  if (!user) {
-    return <Navigate to={'/login'} />;
-  }
-  return children;
-};
+  const ProtectedRoute = ({ children }) => {
+    if (!user) {
+      return <Navigate to={'/login'} />;
+    }
+    return children;
+  };
 
   return (
     <div className={darkMode ? 'app dark' : grayMode ? 'app gray' : 'app'}>
@@ -40,27 +39,97 @@ const ProtectedRoute = ({ children }) => {
         <Routes>
           <Route path="/">
             <Route path="login" element={<Login />} />
-            <Route index element={ <ProtectedRoute> <Home /></ProtectedRoute> } />
+            <Route
+              index
+              element={
+                <ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>
+              }
+            />
 
             {/* Users nested routes */}
             <Route path="users">
-              <Route index element={ <ProtectedRoute><UserList /></ProtectedRoute> } />
-              <Route path=":userId" element={<ProtectedRoute> <Single /> </ProtectedRoute>} />
-              <Route path="new" element={ <ProtectedRoute> <NewUser /> </ProtectedRoute> } />
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <UserList />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path=":userId"
+                element={
+                  <ProtectedRoute>
+                    <Single />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <ProtectedRoute>
+                    <NewUser />
+                  </ProtectedRoute>
+                }
+              />
             </Route>
 
             {/* Hotels nested routes */}
             <Route path="hotels">
-              <Route index element={ <ProtectedRoute> <HotelList  /> </ProtectedRoute> } />
-              <Route path=":hotelId" element={ <ProtectedRoute> <Single /> </ProtectedRoute> } />
-              <Route path="new" element={ <ProtectedRoute> <NewHotel /> </ProtectedRoute> } />
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <HotelList />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path=":hotelId"
+                element={
+                  <ProtectedRoute>
+                    <Single />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <ProtectedRoute>
+                    <NewHotel />
+                  </ProtectedRoute>
+                }
+              />
             </Route>
 
-             {/* Hotels nested routes */}
-             <Route path="rooms">
-              <Route index element={ <ProtectedRoute> <RoomList  /> </ProtectedRoute> } />
-              <Route path=":roomId" element={ <ProtectedRoute> <Single /> </ProtectedRoute> } />
-              <Route path="new" element={ <ProtectedRoute> <NewRoom /> </ProtectedRoute> } />
+            {/* Hotels nested routes */}
+            <Route path="rooms">
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <RoomList />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path=":roomId"
+                element={
+                  <ProtectedRoute>
+                    <Single />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <ProtectedRoute>
+                    <NewRoom />
+                  </ProtectedRoute>
+                }
+              />
             </Route>
           </Route>
         </Routes>

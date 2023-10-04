@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../../components/header/Header';
 import './Hotels.scss';
 import { useLocation, useParams } from 'react-router-dom';
 import { format } from 'date-fns';
